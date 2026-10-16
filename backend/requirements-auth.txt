@@ -1,0 +1,10 @@
+fastapi
+uvicorn[standard]
+sqlalchemy
+pymysql
+cryptography
+bcrypt
+pydantic[email]
+PyJWT>=2.8
+email-validator>=2.0
+python-dotenv>=1.0

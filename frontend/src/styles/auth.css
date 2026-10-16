@@ -1,0 +1,266 @@
+/* Login, register, loading screen and logout button.
+   Uses the same colours as App.css (indigo #4f46e5 on #f4f6fb). */
+
+/* ---------- Keyboard focus (visible everywhere) ---------- */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible {
+  outline: 3px solid rgba(79, 70, 229, 0.45);
+  outline-offset: 2px;
+}
+
+/* ---------- Page + card ---------- */
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 16px;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 420px;
+  padding: 32px 28px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(31, 41, 55, 0.1);
+}
+
+.auth-brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.auth-brand h1 {
+  margin: 0;
+  font-size: 22px;
+}
+
+.auth-brand span {
+  font-size: 13px;
+  color: #6b7280;
+}
+
+/* ---------- Fields ---------- */
+.auth-field {
+  margin-bottom: 16px;
+}
+
+.auth-field label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #374151;
+}
+
+.auth-field input {
+  width: 100%;
+  padding: 11px 14px;
+  font-size: 15px;
+  color: #111827;
+  background: #fff;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+}
+
+.auth-field input:focus {
+  border-color: #4f46e5;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
+}
+
+.auth-field input[aria-invalid="true"] {
+  border-color: #dc2626;
+}
+
+.auth-field input:disabled {
+  background: #f3f4f6;
+  cursor: not-allowed;
+}
+
+.password-wrapper {
+  position: relative;
+}
+
+.password-wrapper input {
+  padding-right: 68px;
+}
+
+.toggle-password {
+  position: absolute;
+  top: 50%;
+  right: 8px;
+  transform: translateY(-50%);
+  padding: 6px 10px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #4f46e5;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.toggle-password:hover {
+  background: #eef2ff;
+}
+
+.field-error,
+.field-hint {
+  margin: 6px 0 0;
+  font-size: 13px;
+}
+
+.field-error {
+  color: #b91c1c;
+}
+
+.field-hint {
+  color: #6b7280;
+}
+
+/* ---------- Buttons + links ---------- */
+.auth-submit {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 8px;
+  padding: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+  background: #4f46e5;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.auth-submit:hover:not(:disabled) {
+  background: #4338ca;
+}
+
+.auth-submit:disabled {
+  opacity: 0.75;
+  cursor: not-allowed;
+}
+
+.auth-switch {
+  margin: 20px 0 0;
+  text-align: center;
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.auth-switch a {
+  color: #4f46e5;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.auth-switch a:hover {
+  text-decoration: underline;
+}
+
+.logout-button {
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #b91c1c;
+  background: #fee2e2;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.logout-button:hover:not(:disabled) {
+  background: #fecaca;
+}
+
+.logout-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.submit-button:disabled,
+.cancel-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* ---------- Spinners ---------- */
+.auth-loading {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: #6b7280;
+}
+
+.spinner,
+.button-spinner {
+  border-radius: 50%;
+  animation: auth-spin 0.8s linear infinite;
+}
+
+.spinner {
+  width: 36px;
+  height: 36px;
+  border: 4px solid #e0e7ff;
+  border-top-color: #4f46e5;
+}
+
+.button-spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-top-color: #fff;
+}
+
+@keyframes auth-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spinner,
+  .button-spinner {
+    animation-duration: 2.4s;
+  }
+}
+
+/* ---------- Small screens ---------- */
+@media (max-width: 600px) {
+  .auth-card {
+    padding: 24px 18px;
+  }
+
+  .navbar {
+    padding: 12px 16px;
+    gap: 10px;
+  }
+
+  .navbar-left span,
+  .admin-avatar {
+    display: none;
+  }
+
+  .navbar-right {
+    gap: 8px;
+  }
+
+  .search-container {
+    width: 100%;
+    min-width: 0;
+  }
+}

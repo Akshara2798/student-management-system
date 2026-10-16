@@ -1,0 +1,210 @@
+/* Dark overlay behind the popup */
+.modal-overlay,
+.modal-backdrop,
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* White popup box */
+.modal,
+.modal-content,
+.student-form-container,
+.form-container {
+  background: #ffffff;
+  width: 100%;
+  max-width: 440px;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Title row with the close (x) button */
+.modal-header,
+.form-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.modal-header h2,
+.modal-header h3,
+.form-header h2,
+.form-header h3 {
+  margin: 0;
+  font-size: 20px;
+  color: #1f2937;
+}
+
+.modal-header p,
+.form-header p,
+.form-subtitle {
+  margin: 4px 0 0;
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.close-btn,
+.modal-close,
+.close-button {
+  background: none;
+  border: none;
+  font-size: 24px;
+  line-height: 1;
+  cursor: pointer;
+  color: #6b7280;
+}
+
+.close-btn:hover,
+.modal-close:hover,
+.close-button:hover {
+  color: #111827;
+}
+
+/* Form fields */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-group,
+.form-field,
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label,
+.form-field label,
+.input-group label,
+form label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #374151;
+}
+
+.form-group input,
+.form-field input,
+.input-group input,
+form input,
+form select {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  box-sizing: border-box;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-group input:focus,
+.form-field input:focus,
+.input-group input:focus,
+form input:focus,
+form select:focus {
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
+}
+
+/* Cancel and submit buttons */
+.form-actions,
+.modal-actions,
+.button-group,
+.btn-group {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.btn-cancel,
+.cancel-btn,
+.btn-secondary {
+  padding: 10px 18px;
+  font-size: 14px;
+  border: 1px solid #d1d5db;
+  background: #ffffff;
+  color: #374151;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.btn-cancel:hover,
+.cancel-btn:hover,
+.btn-secondary:hover {
+  background: #f3f4f6;
+}
+
+.btn-submit,
+.submit-btn,
+.btn-primary,
+.add-btn {
+  padding: 10px 18px;
+  font-size: 14px;
+  border: none;
+  background: #4f46e5;
+  color: #ffffff;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.btn-submit:hover,
+.submit-btn:hover,
+.btn-primary:hover,
+.add-btn:hover {
+  background: #4338ca;
+}
+
+/* White box: styles whatever element sits directly inside the overlay,
+   so it works even if I don't know its class name */
+.modal-overlay > div,
+.modal-backdrop > div,
+.overlay > div {
+  background: #ffffff;
+  width: 100%;
+  max-width: 440px;
+  padding: 28px;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+/* Buttons used in your project */
+.cancel-button {
+  padding: 10px 18px;
+  font-size: 14px;
+  font-weight: 600;
+  border: 1px solid #d1d5db;
+  background: #ffffff;
+  color: #374151;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.cancel-button:hover:not(:disabled) {
+  background: #f3f4f6;
+}
+
+.submit-button {
+  padding: 10px 18px;
+  font-size: 14px;
+  font-weight: 600;
+  border: none;
+  background: #4f46e5;
+  color: #ffffff;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.submit-button:hover:not(:disabled) {
+  background: #4338ca;
+}

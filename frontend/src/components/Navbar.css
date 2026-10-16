@@ -1,0 +1,256 @@
+
+/* =====================================
+   STUDENTHUB — PREMIUM NAVIGATION BAR
+===================================== */
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    width: 100%;
+    min-height: 82px;
+    padding: 14px 42px;
+    background: #111827;
+    color: #ffffff;
+    border-bottom: 1px solid rgb(255 255 255 / 8%);
+    box-shadow: 0 4px 18px rgb(15 23 42 / 12%);
+}
+
+/* Brand */
+
+.navbar-left {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    flex-shrink: 0;
+}
+
+.navbar-logo {
+    display: grid;
+    place-items: center;
+    width: 46px;
+    height: 46px;
+    border: 1px solid rgb(255 255 255 / 12%);
+    border-radius: 13px;
+    background: linear-gradient(135deg, #6366f1, #4338ca);
+    color: #ffffff;
+    box-shadow: 0 5px 14px rgb(79 70 229 / 30%);
+}
+
+.navbar-logo svg {
+    width: 25px;
+    height: 25px;
+}
+
+.navbar-brand h2 {
+    margin: 0;
+    color: #ffffff;
+    font-size: 21px;
+    font-weight: 750;
+    letter-spacing: -0.6px;
+}
+
+.navbar-brand span {
+    display: block;
+    margin-top: 5px;
+    color: #9ca9bd;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+/* Center status */
+
+.navbar-center {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    color: #c4cddd;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.navbar-status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #34d399;
+    box-shadow: 0 0 0 4px rgb(52 211 153 / 12%);
+}
+
+/* Right side */
+
+.navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+
+.navbar-profile {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+}
+
+.admin-avatar {
+    display: grid;
+    place-items: center;
+    width: 42px;
+    height: 42px;
+    flex-shrink: 0;
+    border: 2px solid rgb(255 255 255 / 15%);
+    border-radius: 50%;
+    background: #e0e7ff;
+    color: #4338ca;
+    font-size: 16px;
+    font-weight: 750;
+    text-transform: uppercase;
+}
+
+.admin-details {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    max-width: 190px;
+}
+
+.admin-name {
+    overflow: hidden;
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 650;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.admin-role {
+    color: #9ca9bd;
+    font-size: 11px;
+}
+
+.navbar-divider {
+    width: 1px;
+    height: 34px;
+    background: rgb(255 255 255 / 13%);
+}
+
+/* Logout */
+
+.navbar .logout-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    min-height: 40px;
+    padding: 0 14px;
+    border: 1px solid rgb(255 255 255 / 15%);
+    border-radius: 9px;
+    background: rgb(255 255 255 / 5%);
+    color: #e5e7eb;
+    font-size: 12px;
+    font-weight: 650;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+}
+
+.navbar .logout-button svg {
+    width: 17px;
+    height: 17px;
+}
+
+.navbar .logout-button:hover:not(:disabled) {
+    border-color: rgb(248 113 113 / 45%);
+    background: rgb(239 68 68 / 12%);
+    color: #fca5a5;
+}
+
+.navbar .logout-button:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+/* Tablet */
+
+@media (max-width: 850px) {
+    .navbar {
+        gap: 16px;
+        padding: 14px 22px;
+    }
+
+    .navbar-center {
+        display: none;
+    }
+
+    .navbar-right {
+        gap: 14px;
+    }
+}
+
+/* Mobile */
+
+@media (max-width: 520px) {
+    .navbar {
+        min-height: 72px;
+        gap: 10px;
+        padding: 12px 14px;
+    }
+
+    .navbar-left {
+        gap: 9px;
+    }
+
+    .navbar-logo {
+        width: 39px;
+        height: 39px;
+        border-radius: 11px;
+    }
+
+    .navbar-logo svg {
+        width: 22px;
+        height: 22px;
+    }
+
+    .navbar-brand h2 {
+        font-size: 17px;
+    }
+
+    .navbar-brand span {
+        font-size: 7px;
+        letter-spacing: 0.8px;
+    }
+
+    .navbar-right {
+        gap: 9px;
+    }
+
+    .navbar-profile {
+        gap: 0;
+    }
+
+    .admin-avatar {
+        width: 36px;
+        height: 36px;
+        font-size: 14px;
+    }
+
+    .admin-details,
+    .navbar-divider {
+        display: none;
+    }
+
+    .navbar .logout-button {
+        min-height: 37px;
+        gap: 6px;
+        padding: 0 9px;
+        font-size: 11px;
+    }
+
+    .navbar .logout-button svg {
+        width: 15px;
+        height: 15px;
+    }
+}
