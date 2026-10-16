@@ -22,3 +22,6 @@ mysql_data/
 .DS_Store
 Thumbs.db
 "@ | Set-Content -Encoding utf8 .gitignore
+.env
+.env.*
+!.env.example
