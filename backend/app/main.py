@@ -22,10 +22,12 @@ app = FastAPI(title="CRUD API")  # creates your FastAPI application and gives it
 # allow_credentials=True is required for the login cookie, so origins must be explicit (no "*").
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=CORS_ORIGINS,
+    allow_origins=[
+        "https://student-management-system-learning-code2.vercel.app",
+    ],
     allow_credentials=True,
-    allow_methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-    allow_headers=["Content-Type"],
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 
